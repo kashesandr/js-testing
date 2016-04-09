@@ -1,0 +1,47 @@
+{
+  "name": "web-testing",
+  "version": "0.0.1",
+  "description": "unit testing, integration testing for web",
+  "main": "index.js",
+  "scripts": {
+    "server": "node ./node_modules/.bin/http-server ./static",
+    "build": "webpack --config webpack-conf.js",
+    "test:unit": "karma start karma-conf.js --single-run --no-auto-watch",
+    "start": "npm run build && npm run server",
+    "test": "npm run test:unit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kashesandr/web-testing.git"
+  },
+  "keywords": [
+    "integration",
+    "unit",
+    "testing",
+    "js",
+    "webdriver"
+  ],
+  "author": "Aleksandr Kasheverov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kashesandr/web-testing/issues"
+  },
+  "homepage": "https://github.com/kashesandr/web-testing",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "http-server": "^0.9.0",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-mocha": "^0.2.2",
+    "karma-sinon-chai": "^1.2.0",
+    "karma-webpack": "^1.7.0",
+    "lolex": "^1.4.0",
+    "mocha": "^2.4.5",
+    "selenium-standalone": "^5.0.0",
+    "sinon": "^1.17.3",
+    "sinon-chai": "^2.8.0",
+    "wdio-mocha-framework": "^0.2.12",
+    "webdriverio": "^4.0.5",
+    "webpack": "^1.12.14"
+  }
+}

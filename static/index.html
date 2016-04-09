@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Greatest Common Delimiter</title>
+    <script src="utils.js"></script>
+</head>
+<body>
+
+    <input type="number" id="num1" >
+    <input type="number" id="num2" >
+    <button id="button">Button</button>
+    <span>=</span>
+    <input type="number" id="result" disabled>
+
+    <script type="text/javascript">
+        var num1 = document.querySelector('#num1');
+        var num2 = document.querySelector('#num2');
+        var result = document.querySelector('#result');
+        var btn = document.querySelector('#button');
+        btn.onclick = function(){
+            result.value = MyUtils.gcd(num1.value, num2.value);
+        }
+    </script>
+
+</body>
+</html>
