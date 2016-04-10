@@ -25,15 +25,18 @@ Then run
     `npm run test:unit`
 
 this will run unit tests using karma (see karma-conf.js for details)
-after tests gone you will see results in terminal
 
 run
     `npm run test:integration`
     
 this will run integration tests (see wdio-conf.js for details)
-after tests gone you will see results in terminal
+
+run 
+    `npm run test:integration-cucumber`
+    
+this will run integration tests with cucumber (see wdio-cucumber-conf.js for details)
 
 run 
     `npm run test`
     
-this run unit and integration tests consequently 
+this run unit and integration tests consequently

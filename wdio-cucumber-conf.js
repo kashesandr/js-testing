@@ -1,5 +1,4 @@
 var chai = require('chai');
-var chaiAsPromised = require('chai-as-promised');
 
 exports.config = {
 
@@ -13,7 +12,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './test/integration/**/*.spec.js'
+        './test/integration-cucumber/**/*.feature'
     ],
     host: 'localhost',
     port: 4444,
@@ -84,7 +83,7 @@ exports.config = {
     // see also: http://webdriver.io/guide/testrunner/frameworks.html
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
-    framework: 'mocha',
+    framework: 'cucumber',
     //
     // Test reporter for stdout.
     // The following are supported: dot (default), spec and xunit
@@ -93,27 +92,11 @@ exports.config = {
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
-    mochaOpts: {
-        ui: 'bdd'
+    cucumberOpts: {
+        require: ['./test/integration-cucumber/step-definitions.js'],
+        timeout: 20000      // <number> timeout for step definitions
     },
-    //
-    // =====
-    // Hooks
-    // =====
-    // WedriverIO provides a several hooks you can use to intefere the test process in order to enhance
-    // it and build services around it. You can either apply a single function to it or an array of
-    // methods. If one of them returns with a promise, WebdriverIO will wait until that promise got
-    // resolved to continue.
-    //
-    // Gets executed once before all workers get launched.
-    // onPrepare: function (config, capabilities) {
-    // },
-    //
-    // Gets executed before test execution begins. At this point you can access to all global
-    // variables like `browser`. It is the perfect place to define custom commands.
     before: function (capabilties, specs) {
         chai.Should();
-        chai.use(chaiAsPromised);
-        chaiAsPromised.transferPromiseness = browser.transferPromiseness;
     }
 };
