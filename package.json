@@ -5,13 +5,17 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "node ./node_modules/.bin/selenium-standalone install",
+
     "server": "node ./node_modules/.bin/http-server ./static",
     "build": "webpack --config webpack-conf.js",
+
+    "start": "npm run build && npm run server",
+    "selenium": "node ./node_modules/.bin/selenium-standalone start",
+
     "test:unit": "karma start karma-conf.js --single-run --no-auto-watch",
-    "selenium": "node ./node_modules/.bin/selenium-standalone start > selenium.log",
     "test:integration": "./node_modules/.bin/wdio ./wdio-conf.js",
     "test:integration-cucumber": "./node_modules/.bin/wdio ./wdio-cucumber-conf.js",
-    "start": "npm run build && npm run server",
+
     "test": "npm run test:unit && npm run test:integration"
   },
   "repository": {
