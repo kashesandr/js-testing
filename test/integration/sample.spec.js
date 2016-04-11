@@ -3,15 +3,12 @@
 describe('The Web App', function() {
     
     it('should have a correct title', function() {
-        browser
-            .url('/')
-            .getTitle()
+        browser.url('/').getTitle()
             .should.eventually.equal('Greatest Common Delimiter')  
     });
 
     it('should have a "Get Result" button', function() {
-        browser
-            .getText('#button')
+        browser.getText('#button')
             .should.eventually.equal('Get Result')
     });
 
