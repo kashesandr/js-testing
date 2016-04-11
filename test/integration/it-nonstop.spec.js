@@ -8,16 +8,18 @@ describe('it-nonstop.net website', function() {
     });
     
     it('should have 7 speakers on the event in Voronezh, 2016', function(done) {
-        var speakers = [ 'Alexander Belotserkovskiy',
-            'Alexander Kasheverov', 'Alexey Rybakov',
-            'Konstantin Mars', 'Stanislav Mekhonoshin',
-            'Vecheslav Mikhailov', 'Vitaliy Bolshakov' ];
+        var speakers = [ 
+            'Alexander Belotserkovskiy', 'Alexander Kasheverov', 
+            'Alexey Rybakov', 'Konstantin Mars', 'Stanislav Mekhonoshin',
+            'Vyacheslav Mikhailov', 'Vitaliy Bolshakov', 'Denis Neklyudov' 
+        ];
         browser.url("http://it-nonstop.net/city/voronezh#shedule")
             .waitForVisible('#visitors').getSource()
             .then(function (source) {
                 speakers.forEach(function (speaker) {
+                    console.log(speaker);
                     source.toString().indexOf(speaker)
-                        .should.be.greaterThan(-1); 
+                        .should.be.greaterThan(-1, speaker); 
                 });
                 done()
             })

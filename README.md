@@ -13,6 +13,8 @@ install all dependencies
 
 # How to use
 
+Tested with node 5.6.0
+
 Run simple webserver & selenium 
 
 First of all run 

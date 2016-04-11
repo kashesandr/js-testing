@@ -15,7 +15,8 @@ Feature: IT-nonstop.net
     Alexey Rybakov
     Konstantin Mars
     Stanislav Mekhonoshin
-    Vecheslav Mikhailov
+    Vyacheslav Mikhailov
     Vitaliy Bolshakov
+    Denis Neklyudov
     """
 

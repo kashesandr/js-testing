@@ -8,6 +8,6 @@ function karmaConfig(configuration) {
         preprocessors: { 'test/unit/**/*.js': ['webpack'] },
         files: [ 'test/unit/**/*.spec.js' ],
         frameworks: [ 'mocha', 'sinon-chai' ],
-        reporters: ['progress']
+        reporters: ['spec']
     });
 }

@@ -3,7 +3,7 @@
 describe('The Web App', function() {
     
     it('should have a correct title', function() {
-        browser.url('/').getTitle()
+        browser.url('http://localhost:8081').getTitle()
             .should.eventually.equal('Greatest Common Delimiter')  
     });
 
