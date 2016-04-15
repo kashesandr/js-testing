@@ -17,7 +17,6 @@ describe('it-nonstop.net website', function() {
             .waitForVisible('#visitors').getSource()
             .then(function (source) {
                 speakers.forEach(function (speaker) {
-                    console.log(speaker);
                     source.toString().indexOf(speaker)
                         .should.be.greaterThan(-1, speaker); 
                 });

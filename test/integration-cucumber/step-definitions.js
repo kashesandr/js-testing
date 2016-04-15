@@ -11,28 +11,34 @@ module.exports = function() {
         return browser.url(url);
     });
     
-    this.When(/set a value "([^"]*)" for the "([^"]*)"/, function (value, elementName) {
-        var selector = getSelector(elementName);
-        return browser.setValue(selector, value);
-    });
+    this.When(/set a value "([^"]*)" for the "([^"]*)"/,
+        function (value, elementName) {
+            var selector = getSelector(elementName);
+            return browser.setValue(selector, value);
+        }
+    );
     
     this.When(/click on the "([^"]*)"/, function (elementName) {
         var selector = getSelector(elementName);
         return browser.click(selector);
     });
 
-    this.Then(/see the value "([^"]*)" in the "([^"]*)" element/, function (expectedValue, elementName) {
-        var selector = getSelector(elementName);
-        return browser.getValue(selector).then(function (value) {
-            assert.equal(value, expectedValue)
-        })
-    });
+    this.Then(/see the value "([^"]*)" in the "([^"]*)" element/,
+        function (expected, elementName) {
+            var selector = getSelector(elementName);
+            return browser.getValue(selector).then(function (value) {
+                assert.equal(value, expected)
+            })
+        }
+    );
 
-    this.Then(/should the title of the page be "([^"]*)"/, function (expectedTitle) {
-        return browser.getTitle().then(function (title) {
-            assert.equal(title, expectedTitle)
-        })
-    });
+    this.Then(/should the title of the page be "([^"]*)"/, 
+        function (expected) {
+            return browser.getTitle().then(function (title) {
+                assert.equal(title, expected)
+            })
+        }
+    );
 
     this.Then(/should see speakers/, function (list) {
 
